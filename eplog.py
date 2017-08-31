@@ -14,6 +14,10 @@ class eplogData():
             # Implementation will be a Dictionary of dictionaries. Where the key is the dictionary name, and then there are keys and values as normal.
         else:
             self.data = {}
+            
+    def __str__(self):
+        """Return the string representation of the self.data dict."""
+        return str(self.data)
     
     def saveTo(self, outputFileName='null'):
         """Outputs the current eplogData.data to a save file."""
