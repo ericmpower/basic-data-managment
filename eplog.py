@@ -7,6 +7,7 @@
 class eplogData():
     """Data stored according to the .eplog filetype."""
     
+
     def __init__(self, dataSourceFile='null'):
         """Parses the .eplog data from a file, or creates an empty eplogData instance."""
         if dataSourceFile != 'null':
@@ -15,14 +16,17 @@ class eplogData():
         else:
             self.data = {}
             
+
     def __str__(self):
         """Return the string representation of the self.data dict."""
         return str(self.data)
     
-    def saveTo(self, outputFileName='null'):
+
+    def saveTo(self, outputFileName='null', showTime=False, overwriteOld=False):
         """Outputs the current eplogData.data to a save file."""
         print "eplogData.saveTo() not implemented"
     
+
     def addData(self, topLevelKey, lowLevelKey, newValue, updateData=True):
         """Adds the newValue to the [lowLevelKey] key of the [topLevelKey] dict. 
            If updateData=False and [lowLevelKey] already exists, don't overwrite the value."""
@@ -35,6 +39,7 @@ class eplogData():
         else:
             self.data[topLevelKey] = {lowLevelKey: newValue}
     
+
     def drawData(self, HorizontalBarGraph=True, verticalBarGraph=False, listData=False, scaleDownValues=False):
         """Draws the data in eplog.data in different ways defined by the optional arguments."""
         print "drawData() not implemented"
