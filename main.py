@@ -5,10 +5,11 @@
 
 """Main file for testing the .eplog filetype classes"""
 import sys
+from eplog import eplogData
 
 def main():
     """Main entry point for the script."""
-    pass
+    data = eplogData('Test')
 
 if __name__ == '__main__':
     sys.exit(main())
