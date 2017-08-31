@@ -23,10 +23,17 @@ class eplogData():
         """Outputs the current eplogData.data to a save file."""
         print "eplogData.saveTo() not implemented"
     
-    def addData(self, topLevelKey, lowLevelKey, newValue, updateData=True)
+    def addData(self, topLevelKey, lowLevelKey, newValue, updateData=True):
         """Adds the newValue to the [lowLevelKey] key of the [topLevelKey] dict. 
            If updateData=False and [lowLevelKey] already exists, don't overwrite the value."""
-        print "addData() not implemented"
+        if topLevelKey in self.data:
+            if lowLevelKey in self.data[topLevelKey]:
+                if updateData is True:
+                    self.data[topLevelKey][lowLevelKey] = newValue
+            else:
+                self.data[topLevelKey][lowLevelKey] = newValue
+        else:
+            self.data[topLevelKey] = {lowLevelKey: newValue}
     
     def drawData(self, HorizontalBarGraph=True, verticalBarGraph=False, listData=False, scaleDownValues=False):
         """Draws the data in eplog.data in different ways defined by the optional arguments."""
